@@ -43,7 +43,7 @@ El uso es sencillo, solo debes ejecutar el archivo python, o descomprimir la car
     python pomodoro.py
     ```
 2. Usa los botones para iniciar, reiniciar, ampliar o reducir la interfaz.
-3. ![Tomato Timer](/tomato.png)
+3. Imagen de como se ve la Aplicacion en Ejecucion: ![Tomato Timer](/Captura.png)
 
 ### Notas Finales
 
