@@ -1,5 +1,8 @@
-# VestaCP
-The ultimate control panel with docker (thanks lagun4ik for a great start)
+# Pomodoro Timer App
+Una aplicación de temporizador Pomodoro desarrollada con `tkinter` para la interfaz gráfica, `Pillow` para la manipulación de imágenes, y `pygame` para la reproducción de sonidos.
+# Descripción
+
+Esta aplicación permite a los usuarios seguir la técnica Pomodoro, que consiste en trabajar durante 25 minutos y luego tomar un descanso corto de 5 minutos. Después de cuatro ciclos de trabajo/descanso, se toma un descanso largo de 10 minutos. La interfaz gráfica incluye una imagen de un tomate, botones para iniciar y reiniciar el temporizador, y la funcionalidad para ampliar o reducir la interfaz.
 
 <b>What's included?</b>
 * ubuntu 16.04 lts + Vesta 0.9.8-25
