@@ -4,15 +4,11 @@ Una aplicación de temporizador Pomodoro desarrollada con `tkinter` para la inte
 
 Esta aplicación permite a los usuarios seguir la técnica Pomodoro, que consiste en trabajar durante 25 minutos y luego tomar un descanso corto de 5 minutos. Después de cuatro ciclos de trabajo/descanso, se toma un descanso largo de 10 minutos. La interfaz gráfica incluye una imagen de un tomate, botones para iniciar y reiniciar el temporizador, y la funcionalidad para ampliar o reducir la interfaz.
 
-<b>What's included?</b>
-* ubuntu 16.04 lts + Vesta 0.9.8-25
-* nginx (proxy) -> apache2 -> php-fcgi - high performance and flexible implementation
-* ssh/sftp, letsencrypt, memcached, redis, MariaDB 10.2, postgresql 9.6, nodejs 10.x, golang 1.12.4, openvpn, mongodb, couchdb, .net core 2.2 runtime
-* folder redirection for data persistence and automatic daily backup provided by VestaCP
-* DNS, named, dovecot/roundcube, spamassassin, clamav, etc... -- disabled by default
-* vesta panel SSL (LE-issued) for mail and control panel - provide $HOSTNAME environment variable
-* added ability to also run [php-fpm](https://github.com/niiknow/vestacp/blob/master/docs/php-fpm.md)
-![](https://raw.githubusercontent.com/niiknow/vestacp/master/docs/images/php-fpm.png?raw=true)
+<b>Características</b>
+* Temporizador Pomodoro con ciclos de trabajo y descanso.
+* Sonido de alarma al finalizar cada intervalo.
+* Interfaz gráfica sin barra de título, con una imagen de tomate.
+* Opciones para mover la ventana, y ampliar/reducir la interfaz.
 
 <b>Run this image:</b>
 ```
