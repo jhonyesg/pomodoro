@@ -10,66 +10,22 @@ Esta aplicación permite a los usuarios seguir la técnica Pomodoro, que consist
 * Interfaz gráfica sin barra de título, con una imagen de tomate.
 * Opciones para mover la ventana, y ampliar/reducir la interfaz.
 
-<b>Run this image:</b>
-```
-mkdir -p /opt/vestacp/{vesta,home,backup}
 
-docker run -d --restart=always \
--p 3322:22 -p 80:80 -p 443:443 -p 9088:8083 \
--v /opt/vestacp/vesta:/vesta -v /opt/vestacp/home:/home -v /opt/vestacp/backup:/backup \
-niiknow/vestacp
-```
 
-## Volumes
-/vesta  -- configurations
+### Requisitos
+- [x] Python 3.x 
+- [x] tkinter
+- [x] Pillow
+- [x] pygame
 
-/home   -- users data
-
-/backup -- users backup
-
-## Authorization
-Login: admin
-
-To get the password, run
-
-`sudo docker exec $CONTAINER_ID cat /vesta-start/root/password.txt`
-
-Alternatively, you can change the password with:
-```
-sudo docker exec $CONTAINER_ID /usr/local/vesta/bin/v-change-user-password admin YOURNEWPASSWORD
-```
-
-## SSH for FTP
-FTP was not installed on purpose because it's not secure.  Use SFTP instead on the 3322 port.  Disable ssh if you don't really need it and use the Vesta FileManager plugin.  Also, make sure you change the user shell in the Vesta panel in order to use ssh.
-
-## todo/done
-- [x] redirected customizable config folders to /vesta, exclude /home.  Home has been setup to be it's own volume.  Do not try to redirect the home folder.  It's like opening a big can of worms.  There are all kind of breaking issues with having home as a symbolic link: Vesta FileManager breaking, Apache and Nginx breaking, SSL breaking, and so on...
-- [x] Use incrond to watch /etc/{passwd,shadow,gshadow,group} and sync to /backup/.etc so remember to attach the backup volume if you want to save password across restart.
-- [x] AWS CLI has been installed to simplify your backup lifestyle.  You just need to setup a cron on VestaCP.
-- [x] Update *index.html* to remove reference to VestaCP from default site for security.
-- [x] **Dovecot/roundcube email, and DNS services** are disabled by default.  Look at /home/admin/bin/my-startup.sh for instruction on how to re-enable these services.  Remember to restart your container after updating my-startup.sh.
-- [x] Replace phpmyadmin and phppgadmin with adminer.
-
-### misc/tested/verified
-- [x] ssh/sftp, nginx, apache2, php7.1+ & v8js 
-- [x] log viewing in Vesta
-- [x] backup and restore
-- [x] Vesta FileManager
-- [x] Letsencrypt
-- [x] Sending/outgoing email, dovecot
-- [x] adminer
-- [x] Redis, Memcached
-- [x] nodejs, golang
-- [x] MariaDB/MySQL, PostgreSql, Mongodb
-- [x] add incron to monitor and immediately backup /etc/{passwd,shadow,gshadow,group}
-- [x] nginx pagespeed module
-- [x] redirect awstats
-- [x] multiple php{7.1,7.2,7.3} fcgi and fpm templates
-
-### your todo
+### Instalación
 - [ ] I recommend the following:
 
-1. Since this is Docker, you can run as many services as you want but only expose request port.
+1. Clona el repositorio:
+    ```bash
+    git clone https://github.com/tu-usuario/pomodoro-timer.git
+    cd pomodoro-timer
+    ```.
 2. Change the default/initial *admin* password for security purpose.
 3. Instead of using the *admin* acccount, consider creating a different/separate credentials for different website/service.  This will make it easier for backup and recovery; especially, when you need to move the user to a different installation.
 
